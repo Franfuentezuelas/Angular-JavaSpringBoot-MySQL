@@ -12,6 +12,13 @@ services:
       - app-network
     volumes:
       - mysql-data:/var/lib/mysql  # Persistencia de datos
+    # esta parte es para asegurar que la base de datos este disponible
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pFran1234"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    # fin de la parte de aseguramiento de la base de datos
 
   # Servicio para la API Spring Boot
   springboot:
