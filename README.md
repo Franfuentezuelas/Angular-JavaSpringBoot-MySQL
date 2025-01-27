@@ -6,7 +6,7 @@ Este proyecto consiste en la integración de tres contenedores Docker que incluy
 
 El proyecto está organizado en las siguientes carpetas:
 
-- **contenedorPrincipal**: En este contenedor se incluyen todas las carpetas del proyecto, además de un `docker-compose.yml` y el propio archivo `README.md`, que realmente son los únicos archivos necesarios para probar el funcionamiento del proyecto.
+- **contenedorPrincipal**: En este contenedor se incluyen todas las carpetas del proyecto, además de un `docker-compose.yml` y el propio archivo `README.md` que realmente son los únicos archivos necesarios para probar el funcionamiento del proyecto, el resto de carpetas amplian la informacion del mismo y apartir de ellas se puede ampliar dicho proyecto.
 - **Front**: Contiene el código fuente del frontend desarrollado en Angular junto con un archivo `Dockerfile` para crear su imagen Docker.
 - **Back**: Contiene el código fuente del backend desarrollado con Java Spring Boot y un archivo `Dockerfile` para crear su imagen Docker.
 - **BD**: Contiene la configuración de la base de datos MySQL, incluyendo un archivo `init.sql` para inicializar la base de datos con datos desde el principio y disponer siempre de datos, junto con un archivo `Dockerfile` para crear su imagen Docker.
