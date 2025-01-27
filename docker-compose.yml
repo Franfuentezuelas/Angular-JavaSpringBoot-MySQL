@@ -1,0 +1,49 @@
+services:
+  # Servicio para la base de datos MySQL
+  mysql:
+    image: franfuentezuelas/datos-mysql:v1
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: Fran1234
+      MYSQL_DATABASE: spring_crud_timeleaf
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+    volumes:
+      - mysql-data:/var/lib/mysql  # Persistencia de datos
+
+  # Servicio para la API Spring Boot
+  springboot:
+    image: franfuentezuelas/java-springboot-mysql:v1.1
+    container_name: springboot-container
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/spring_crud_timeleaf
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Fran1234
+    depends_on:
+      - mysql
+    ports:
+      - "9000:9000"
+    networks:
+      - app-network
+
+  # Servicio para la aplicación Angular
+  angular:
+    image: franfuentezuelas/contenedor-angular:v1
+    container_name: angular-container
+    ports:
+      - "4200:4200"
+    depends_on:
+      - springboot
+    networks:
+      - app-network
+
+# Redes
+networks:
+  app-network:
+    driver: bridge
+
+# Volúmenes
+volumes:
+  mysql-data:  # Definición del volumen para la persistencia de datos

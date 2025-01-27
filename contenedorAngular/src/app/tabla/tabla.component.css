@@ -1,0 +1,102 @@
+/* Centrado de todo el contenido en la pantalla */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;  /* Fondo de la pantalla */
+}
+
+/* Contenedor de la tabla y el enlace */
+.tabla-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%; /* O el tamaño que prefieras */
+  max-width: 1000px; /* Limitar el tamaño máximo si lo deseas */
+}
+
+/* Estilo de la tabla */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+}
+
+.table th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+.table tbody tr {
+  background-color: #fff;
+}
+
+.table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.table td {
+  border-bottom: 1px solid #ddd;
+}
+
+.table td:last-child {
+  border-right: none;
+}
+
+.table thead {
+  border-bottom: 2px solid #ddd;
+}
+
+/* Estilo del enlace */
+a {
+  display: inline-block;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #A8D0E6;
+  color: #333;
+  border-radius: 8px;
+  border: 1px solid #A8D0E6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a:hover {
+  background-color: #80B9D4;
+  color: white;
+}
+
+a:active {
+  background-color: #A8D0E6;
+  color: #333;
+}
+
+/* Mensaje cuando no hay alumnos */
+p {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #555;
+}
+

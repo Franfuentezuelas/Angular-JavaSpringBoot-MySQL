@@ -1,0 +1,31 @@
+<div class="container">
+  <!-- Enlace para cargar los alumnos -->
+  <a href="#" (click)="cargarAlumnos()">Lista Completa</a>
+
+  <!-- Si los alumnos están cargados, mostramos la tabla -->
+  <table class="table" *ngIf="listaCargada">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Curso</th>
+        <th>Clase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let alumno of alumnos">
+        <td>{{ alumno.nombre }}</td>
+        <td>{{ alumno.apellidos }}</td>
+        <td>{{ alumno.edad }}</td>
+        <td>{{ alumno.curso }}</td>
+        <td>{{ alumno.clase }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Si no hay alumnos o no se ha cargado, mostramos un mensaje -->
+  <p *ngIf="!listaCargada">No se han cargado los alumnos. Haz clic en "Lista Completa" para cargar.</p>
+</div>
+
+
