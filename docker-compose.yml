@@ -23,6 +23,8 @@ services:
   # Servicio para la API Spring Boot
   springboot:
     image: franfuentezuelas/java-springboot-mysql:v1.1
+    # image: franfuentezuelas/java-springboot-mysql:v2.0
+    # el contenedor v2 contiene una api que proporciona la ip del servidor
     container_name: springboot-container
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/spring_crud_timeleaf
@@ -38,6 +40,10 @@ services:
   # Servicio para la aplicación Angular
   angular:
     image: franfuentezuelas/contenedor-angular:v1
+    # image: franfuentezuelas/contenedor-angular:v2
+    # si se utilia el contenedor v2 de angular y 
+    # no el v2 de spring boot no se obtendra la ip ya 
+    # que la api de la ip solo esta en el contenedor v2
     container_name: angular-container
     ports:
       - "4200:4200"
